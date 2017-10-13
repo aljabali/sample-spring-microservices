@@ -1,6 +1,10 @@
 server:  
   port: ${PORT:8761}
-    
+  ssl:
+    key-store: keystore.jks
+    key-store-password: password
+    key-password: password
+
 eureka:  
   instance:
     hostname: localhost

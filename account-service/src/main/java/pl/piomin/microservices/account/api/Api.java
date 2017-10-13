@@ -31,7 +31,7 @@ public class Api {
 	
 	@RequestMapping("/accounts/{number}")
 	public Account findByNumber(@PathVariable("number") String number) {
-		logger.info(String.format("Account.findByNumber(%s)", number));
+		logger.info(String.format("Node 1 ---> Account.findByNumber(%s)", number));
 		return accounts.stream().filter(it -> it.getNumber().equals(number)).findFirst().get();
 	}
 	

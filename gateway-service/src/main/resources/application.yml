@@ -15,22 +15,31 @@ zuul:
     account: 
       path: /account/**
       serviceId: account-service
-    customer: 
+    customer:
       path: /customer/**
       serviceId: customer-service          
 
 ribbon:
   eureka:
     enabled: true
+  TrustStore: keystore.jks
+  TrustStorePassword : password
+  ReadTimeout: 60000
+  IsSecure: true
+  MaxAutoRetries: 1
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: https://localhost:8761/eureka/
     registerWithEureka: false
       
 server:
   port: 8765
+  ssl:
+    key-store: keystore.jks
+    key-store-password: password
+    key-password: password
 
 logging:
   level:
