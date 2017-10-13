@@ -8,16 +8,16 @@ All what i did is to enable ssl for both Eureka+Zuul and services
 
 simply follow these steps
 
-# run eureka first
+## run eureka first
 
-# Import certificate in your local keystore
+## Import certificate in your local keystore
 https://www.grim.se/guide/jre-cert
 
 i.e. Ubuntu
 keytool -import -alias alias -keystore /etc/ssl/certs/java/cacerts -file localhost.crt
 
+## Configuration changes are
 
-Configuration changes are
 1- add ssl to all configurations of servers
   ssl:
     key-store: keystore.jks
